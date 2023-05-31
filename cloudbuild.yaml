@@ -11,7 +11,7 @@ steps:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
 
-# Build and deploy geoservice
+# Build and deploy geo-service
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/${PROJECT_ID}/node-web-app:$COMMIT_SHA', '.']
 - name: 'gcr.io/cloud-builders/docker'

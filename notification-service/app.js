@@ -5,6 +5,7 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("notification Microservice");
 });
+//worked?
 app.get('/notification', (req, res) => {
   // Handle the notification logic
   res.json({ message: 'New your weather report is generated' });

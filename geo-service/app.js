@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
   console.error('Error:', err);
   res.status(500).json({ error: 'Internal Server Error' });
 });
-
+//worked?
 const port = 3002;
 app.listen(port, () => {
   console.log('Geo-Service listening on port', port);

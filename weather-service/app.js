@@ -6,6 +6,7 @@
   app.get("/", (req, res) => {
     res.send("weather Microservice");
   });
+  //worked?
   app.get('/weather', async (req, res) => {
     try {
       // Fetch latitude and longitude from the geolocation service

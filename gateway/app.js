@@ -10,7 +10,7 @@ app.use(cors());
 app.get('/weather', async (req, res) => {
   try {
     let { latitude, longitude } = req.query;
-
+//worked?
     // Check if latitude or longitude is null
     if (!latitude || !longitude) {
       // return res.status(400).json({ error: 'Latitude and longitude are required' });

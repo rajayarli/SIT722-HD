@@ -13,7 +13,7 @@ app.use(express.json());
 const jwtSecret = "ThisIsTheSecret";
 const saltRounds = 10;
 
-// Auth API Routes
+// Auth API Routesdd
 app.post("/login", passport.authenticate("local", { session: false }), async (req, res) => {
   try {
     const { username } = req.user;

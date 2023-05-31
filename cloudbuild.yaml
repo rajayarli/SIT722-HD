@@ -51,5 +51,5 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-service-deployment-actualweatherservice', 'mynode=gcr.io/solid-ridge-388408/weatherapp-weatherservice:$COMMIT_SHA']
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-west1'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: weather-service-deployment-actualweatherservice
+  name: weather-service-deployment
   labels:
     app: weatherapp
 spec:
@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: weather-service
-        image: gcr.io/solid-ridge-388408/weatherapp-weatherservice:latest
+        image: gcr.io/hd-weather/weatherapp-weatherservice:latest
         ports:
         - containerPort: 3001

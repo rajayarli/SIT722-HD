@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: geo-service
-        image: gcr.io/solid-ridge-388408/weatherapp-geo-service:latest
+        image: gcr.io/hd-weather/weatherapp-geo-service:latest
         ports:
         - containerPort: 3002

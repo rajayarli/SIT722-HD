@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: user-auth
-        image: gcr.io/solid-ridge-388408/weatherapp-user-service:latest
+        image: gcr.io/hd-weather/weatherapp-user-service:latest
         ports:
         - containerPort: 4001

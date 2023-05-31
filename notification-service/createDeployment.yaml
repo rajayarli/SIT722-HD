@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: notification
-        image: gcr.io/solid-ridge-388408/weatherapp-notification-service:latest
+        image: gcr.io/hd-weather/weatherapp-notification-service:latest
         ports:
         - containerPort: 3003

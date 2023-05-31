@@ -2,12 +2,10 @@ steps:
 # Build and deploy gateway
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/${PROJECT_ID}/weatherapp-gateway:$COMMIT_SHA', 'gateway']
-  dir: 'gateway'
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/${PROJECT_ID}/weatherapp-gateway:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-gateway', 'gateway=gcr.io/${PROJECT_ID}/weatherapp-gateway:$COMMIT_SHA']
-  dir: 'gateway'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=hello-cluster'
@@ -15,12 +13,10 @@ steps:
 # Build and deploy geoservice
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/${PROJECT_ID}/weatherapp-geo-service:$COMMIT_SHA', 'geo-service']
-  dir: 'geo-service'
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/${PROJECT_ID}/weatherapp-geo-service:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/geo-service-deployment', 'geo-service=gcr.io/${PROJECT_ID}/weatherapp-geo-service:$COMMIT_SHA']
-  dir: 'geo-service'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=hello-cluster'
@@ -28,12 +24,10 @@ steps:
 # Build and deploy notification service
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/${PROJECT_ID}/weatherapp-notification-service:$COMMIT_SHA', 'notification-service']
-  dir: 'notification-service'
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/${PROJECT_ID}/weatherapp-notification-service:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-notification-deployment', 'notification=gcr.io/${PROJECT_ID}/weatherapp-notification-service:$COMMIT_SHA']
-  dir: 'notification-service'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=hello-cluster'
@@ -41,12 +35,10 @@ steps:
 # Build and deploy user service
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/${PROJECT_ID}/weatherapp-user-service:$COMMIT_SHA', 'user-service']
-  dir: 'user-service'
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/${PROJECT_ID}/weatherapp-user-service:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/user-service-deployment', 'user-auth=gcr.io/${PROJECT_ID}/weatherapp-user-service:$COMMIT_SHA']
-  dir: 'user-service'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=hello-cluster'
@@ -54,12 +46,10 @@ steps:
 # Build and deploy weather service
 - name: 'gcr.io/cloud-builders/docker'
   args: ['build', '-t', 'gcr.io/${PROJECT_ID}/weatherapp-weather-service:$COMMIT_SHA', 'weather-service']
-  dir: 'weather-service'
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/${PROJECT_ID}/weatherapp-weather-service:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-service-deployment', 'weather-service=gcr.io/${PROJECT_ID}/weatherapp-weather-service:$COMMIT_SHA']
-  dir: 'weather-service'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=hello-cluster'

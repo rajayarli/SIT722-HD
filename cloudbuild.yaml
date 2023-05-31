@@ -6,6 +6,7 @@ steps:
   args: ['push', 'gcr.io/${PROJECT_ID}/node-web-app:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-service-deployment', 'mynode=gcr.io/solid-ridge-388408/weatherapp-gateway:$COMMIT_SHA']
+  dir: 'gateway' 
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
@@ -17,6 +18,7 @@ steps:
   args: ['push', 'gcr.io/${PROJECT_ID}/node-web-app:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/geo-service-deployment', 'mynode=gcr.io/solid-ridge-388408/weatherapp-geo-service:$COMMIT_SHA']
+  dir: 'geo-service'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
@@ -28,6 +30,7 @@ steps:
   args: ['push', 'gcr.io/${PROJECT_ID}/node-web-app:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-notification-deployment', 'mynode=gcr.io/solid-ridge-388408/weatherapp-notification-service:$COMMIT_SHA']
+  dir: 'notification-service'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
@@ -39,6 +42,7 @@ steps:
   args: ['push', 'gcr.io/${PROJECT_ID}/node-web-app:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/user-service-deployment', 'mynode=gcr.io/solid-ridge-388408/weatherapp-user-service:$COMMIT_SHA']
+  dir: 'user-service'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
@@ -50,6 +54,7 @@ steps:
   args: ['push', 'gcr.io/${PROJECT_ID}/node-web-app:$COMMIT_SHA']
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-service-deployment-actualweatherservice', 'mynode=gcr.io/solid-ridge-388408/weatherapp-weatherservice:$COMMIT_SHA']
+  dir: 'weather-service'
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'

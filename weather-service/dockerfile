@@ -1,0 +1,20 @@
+# Set the base image
+FROM node:14
+
+# Set the working directory
+WORKDIR C:\Users\rajar\weatherapp-737\weather-service
+
+# Copy package.json and package-lock.json files
+COPY package*.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy the application code
+COPY . .
+
+# Expose the port
+EXPOSE 3002
+
+# Start the application
+CMD [ "node", "app.js" ]

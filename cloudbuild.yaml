@@ -7,7 +7,7 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-service-deployment', 'mynode=gcr.io/solid-ridge-388408/weatherapp-gateway:$COMMIT_SHA']
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-west1'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
 
 # Build and deploy geoservice
@@ -18,7 +18,7 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/geo-service-deployment', 'mynode=gcr.io/solid-ridge-388408/weatherapp-geo-service:$COMMIT_SHA']
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-west1'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
 
 # Build and deploy notification
@@ -29,7 +29,7 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/weather-notification-deployment', 'mynode=gcr.io/solid-ridge-388408/weatherapp-notification-service:$COMMIT_SHA']
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-west1'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
 
 # Build and deploy user service
@@ -40,7 +40,7 @@ steps:
 - name: 'gcr.io/cloud-builders/kubectl'
   args: ['set', 'image', 'deployment/user-service-deployment', 'mynode=gcr.io/solid-ridge-388408/weatherapp-user-service:$COMMIT_SHA']
   env:
-  - 'CLOUDSDK_COMPUTE_ZONE=us-west1'
+  - 'CLOUDSDK_COMPUTE_ZONE=us-west2'
   - 'CLOUDSDK_CONTAINER_CLUSTER=weather-cluster'
 
 # Build and deploy weather-service

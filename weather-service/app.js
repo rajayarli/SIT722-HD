@@ -3,7 +3,9 @@
   const app = express();
   const cors = require('cors');
   app.use(cors());
-
+  app.get("/", (req, res) => {
+    res.send("weather Microservice");
+  });
   app.get('/weather', async (req, res) => {
     try {
       // Fetch latitude and longitude from the geolocation service

@@ -26,7 +26,7 @@ app.post("/login", passport.authenticate("local", { session: false }), async (re
 });
 
 app.get("/", (req, res) => {
-  res.send("Auth Microservice");
+  res.send("user Auth Microservice");
 });
 
 app.get("/loggedin", (req, res) => {

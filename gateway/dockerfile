@@ -2,7 +2,7 @@
 FROM node:14
 
 # Set the working directory
-WORKDIR C:\Users\rajar\weatherapp-737\gateway
+WORKDIR usr/src/app
 
 # Copy package.json and package-lock.json files
 COPY package*.json ./

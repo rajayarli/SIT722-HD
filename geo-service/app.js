@@ -3,7 +3,9 @@ const axios = require('axios');
 const app = express();
 const cors = require('cors');
 app.use(cors());
-
+app.get("/", (req, res) => {
+  res.send("geo Microservice");
+});
 app.get('/geolocation', async (req, res) => {
   try {
     const ipAddress = req.ip; // Get the client's IP address from the request object

@@ -14,13 +14,13 @@ app.get('/weather', async (req, res) => {
     // Check if latitude or longitude is null
     if (!latitude || !longitude) {
       // return res.status(400).json({ error: 'Latitude and longitude are required' });
-      data  = await axios.get('http://localhost:3002/geolocation')
+      data  = await axios.get('http://34.127.27.42/geolocation')
       latitude = data.location.latitude;
       longitude = data.location.latitude;
     }
     
     // Make a request to the weather service to get weather data
-    const weatherServiceResponse = await axios.get('http://localhost:3001/weather', {
+    const weatherServiceResponse = await axios.get('http://34.82.175.246/weather', {
       params: { latitude, longitude }
     });
 
@@ -35,7 +35,7 @@ app.get('/weather', async (req, res) => {
 
 app.get('/access-geoservice', async (req, res) => {
   try {
-    const geoServiceResponse = await axios.get('http://localhost:3001/geolocation');
+    const geoServiceResponse = await axios.get('http://34.82.175.246/');
     const location = geoServiceResponse.data.location;
 
     res.json({ success: true, location });
@@ -46,7 +46,7 @@ app.get('/access-geoservice', async (req, res) => {
 
 app.get('/access-notificationservice', async (req, res) => {
   try {
-    const notificationServiceResponse = await axios.get('http://localhost:3003/notification');
+    const notificationServiceResponse = await axios.get('http://34.82.120.7/');
     const message = notificationServiceResponse.data.message;
 
     res.json({ success: true, message });
@@ -57,7 +57,7 @@ app.get('/access-notificationservice', async (req, res) => {
 
 app.get('/access-userservice', async (req, res) => {
   try {
-    const userServiceResponse = await axios.get('http://localhost:4001/');
+    const userServiceResponse = await axios.get('http://34.82.16.12/');
     const userServiceMessage = userServiceResponse.data;
 
     res.json({ success: true, userServiceMessage });

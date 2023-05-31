@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: weather-service-deployment-actualweatherservice
+  labels:
+    app: weatherapp
+spec:
+  # modify replicas according to your case
+  replicas: 1
+  selector:
+    matchLabels:
+      tier: frontend
+  template:
+    metadata:
+      labels:
+        tier: frontend
+    spec:
+      containers:
+      - name: weather-service
+        image: gcr.io/solid-ridge-388408/weatherapp-weatherservice:latest
+        ports:
+        - containerPort: 3001

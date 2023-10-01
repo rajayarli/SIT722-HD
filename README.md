@@ -1,7 +1,7 @@
 
 
 ## Description
-This repository contains the source code and deployment instructions for the SIT22 project. The project consists of multiple microservices that make up a weather application.
+This repository contains the source code and deployment instructions for the SIT722 project. The project consists of multiple microservices that make up a weather application.
 
 ## Deployment
 

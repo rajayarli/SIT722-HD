@@ -1,7 +1,7 @@
-# SIT323_737-2023-T1-11.2HD ReadMe
+
 
 ## Description
-This repository contains the source code and deployment instructions for the SIT323_737-2023-T1-11.2HD project. The project consists of multiple microservices that make up a weather application.
+This repository contains the source code and deployment instructions for the SIT22 project. The project consists of multiple microservices that make up a weather application.
 
 ## Deployment
 
